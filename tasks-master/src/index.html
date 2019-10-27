@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Task manager</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f26522">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="keywords" content="Список задач">
+  <meta name="description" content="Задачи, скрам">
+  <link rel="stylesheet" href="./pages/index.css" >
+</head>
+<body>
+  <div class="page">
+    <header class="header page__header">
+      <img class="header__logo logo" src="./images/logo.png" alt="Логотип списка задач">
+      <article class="header__user user">
+        <div class="user__logo"></div>
+        <span class="user__name">User name</span>
+      </article>
+    </header>
+    <main class="content">
+      <section class="description content__description">
+        <h2 class="description__title">
+          Your tasks
+        </h2>
+        <span class="button">
+          <button type="button" class="description__add-task button__wrapper" data-hover-text="Add new task &#215;">
+           Add new task &#215;
+          </button>
+        </span>
+      </section>
+      <section class="tasks content__tasks">
+
+      </section>
+    </main>
+  </div>
+  <div class="popup">
+    <div class="popup__overlay">
+      <form action="/index.html" class="popup__form" method="post">
+        <button type="button" class="popup__close ">
+          <svg viewBox="0 0 21 21" width="21" height="21">
+            <polygon xmlns="http://www.w3.org/2000/svg" points="21 1.2 19.8 0 10.5 9.3 1.2 0 0 1.2 9.3 10.5 0 19.8 1.2 21 10.5 11.7 19.8 21 21 19.8 11.7 10.5 21 1.2"></polygon>
+          </svg>
+        </button>
+        <label class="text-label">
+          <input type="text" class="text-input popup__title" placeholder="Название задачи">
+        </label>
+        <label class="text-label">
+          <input type="text" class="text-input popup__description" placeholder="Описание задачи">
+        </label>
+        <label class="text-label">
+          <select class="text-select popup__type">
+            <option value="Важная" >Важная задача</option>
+            <option value="Среднее значение">Среднее значение задачи</option>
+            <option value="Обычная задача">Обычная</option>
+          </select>
+        </label>
+        <label class="text-label">
+          <input type="date" class="text-date popup__date">
+        </label>
+        <span class="button popup__button">
+          <button type="submit" class="popup__submit button__wrapper" data-hover-text="Send">
+           Send
+          </button>
+        </span>
+      </form>
+    </div>
+  </div>
+  <template id="task-example">
+    <article class="tasks__item task">
+      <h2 class="task__title">
+        Название задачи
+      </h2>
+      <p class="task__description">
+        Описание задачи
+      </p>
+      <p class="task__date">
+        Истекает: <span class="task__by">14-03-2020</span>
+      </p>
+    </article>
+  </template>
+  <script src="pages/index.js" defer="defer"></script>
+</body>
+</html>
